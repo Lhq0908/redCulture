@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "发现",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-load-more": "../../../plugins/iview/load-more/index",
+    "i-row": "../../../plugins/iview/row/index",
+    "i-col": "../../../plugins/iview/col/index"
+  }
+}

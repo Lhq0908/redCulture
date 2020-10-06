@@ -1,0 +1,995 @@
+// //--------- variables ---------
+$main-color: #007bff;
+$common-color: #333;
+$base-font-size: 14px;
+$common-font-size: 16px; //--------- common ---------
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+mark,
+menu,
+nav,
+nav li,
+nav ul,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none !important;
+}
+
+body {
+  background: #fff;
+  font: 12px arial, inherit, \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
+  margin: 0;
+}
+
+a,
+em,
+font,
+h1,
+h2,
+h3,
+p,
+small {
+  font-family: "inherit" !important;
+}
+
+img {
+  display: block;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfloat {
+  zoom: 1;
+}
+
+a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.w1120 {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.elastic {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+html {
+  body {
+    font-size: $base-font-size;
+    font-weight: 300;
+  }
+}
+/*----------------- 轮播图 ---------------*/
+.carousel-indicators{
+  li{
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border:1px solid #a61f24;
+    border-radius: 50%;
+    margin-right: 11px;
+  }
+  .active{
+    width: 25px;
+    height: 11px;
+    border-radius: 19px;
+    background-color:#a61f24;
+  }
+}
+/*----------------- 首页样式 ---------------*/
+.home-index {
+  background-color: #fff!important;
+
+  .breadcrumb-item::before {
+    border: none!important;
+  }
+  /*---------- 轮播图 ---------*/
+  .index-carousel {
+    height: 407px;
+
+    .h-img {
+      height: 407px;
+    }
+  }
+  /*----------- 首页内容 -----------*/
+  .index-content {
+    .headline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 45px 0;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+      p {
+        margin-left: 15px;
+        font-size: 24px;
+        color: #a61f24;
+        font-family: "方正汉真" !important;
+        font-weight: 600;
+      }
+
+      spna {
+        font-weight: 400 !important;
+      }
+    }
+
+    .honor {
+      margin: 48px 0;
+
+      .honor-top {
+        .h-img {
+          width: 280px;
+          height: 211px;
+          margin-right: 17px;
+          margin-top: 2px;
+          img{
+            width: 280px;
+            height: 211px;
+            object-fit: cover;
+            // display: block;
+          }
+        }
+
+        .top-right {
+          .hade {
+            border-bottom: 3px solid #a61f24;
+            padding-bottom: 2px;
+
+            .hade-title {
+              // margin-top: 2px;
+              border-bottom: 1px solid #a61f24;
+              font-size: 22px;
+              font-weight: normal;
+              color: #a61f24;
+              padding-bottom: 16px;
+              img {
+                width: 16px;
+                height: 16px;
+                display: block;
+              }
+            }
+          }
+
+          .brief {
+            margin-top: 16px;
+            font-size: 16px;
+            color: rgba(16,16,16,1);
+            text-align: left;
+            line-height: 30px;
+          }
+        }
+      }
+
+      .honor-img {
+        border: #fff;
+        margin-top: 16px;
+
+        ol {
+          li {
+            width: 218px;
+            height: 161px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    /*----------- 标题头部 -----------*/
+    .jointly-head {
+      font-size: 22px;
+      color: #ab1f24;
+      font-weight: normal;
+      padding-bottom: 2px;
+      border-bottom: 3px solid #a61f24;
+
+      .head {
+        border-bottom: 1px solid #a61f24;
+        padding-bottom: 16px;
+
+        img {
+          width: 16px;
+          height: 16px;
+          display: block;
+        }
+      }
+    }
+    /*---------- 军民共建 --------*/
+    .jointly {
+      margin-top: 41px;
+      padding-bottom: 2px;
+
+      .jointly-lest {
+        margin-top: 20px;
+
+        ol {
+          flex-wrap: wrap;
+          flex-grow: wrap;
+          flex: 0 0 20%;
+
+          li {
+            height: 165px;
+            margin-bottom: 33px;
+            position: relative;
+
+            .left-img {
+              margin-right: 12px;
+              width: 220px;
+              height: 165px;
+              overflow: hidden;
+              img {
+                margin-right: 12px;
+                width: 100%;
+                height: 100%;
+                object-fit:cover;
+              }
+            }
+
+            .written {
+              width: 310px;
+              height: 165px;
+              align-content: stretch;
+              h3 {
+                font-size: 18px;
+                text-align: left;
+                color: #101010;
+                margin-bottom: 14px;
+                line-height: 32px;
+                font-weight: 500;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+              }
+
+              p {
+                font-size: 16px;
+                color: #101010;
+                line-height: 30px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+              }
+
+              p:webkit-scrollbar {
+                display: nohe;
+              }
+            }
+          }
+
+          li:after {
+            content: '';
+            border-bottom: 1px dashed #eee;
+            display: block;
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            bottom: -10%;
+            left: 0;
+          }
+        }
+      }
+    }
+    /*--------- 广告图 -------*/
+    .advert {
+      margin-top: 20px;
+      width: 100%;
+      height: 120px;
+      img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+      }
+    }
+    /*----------- 学院与地标 ---------*/
+    .faCard {
+      margin-top: 41px;
+      /*----------- 法卡山学院 ---------*/
+      .faCard-college {
+        width: 651px;
+        margin-right: 36px;
+
+        .college-content {
+          margin-top: 16px;
+
+          p {
+            font-size: 16px;
+            text-align: left;
+            color: #101010;
+            line-height: 30px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+          }
+
+          ol {
+            margin-top: 19px;
+
+            li {
+              margin-right: 8px;
+              overflow: hidden;
+              width: 213px;
+              height: 161px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit:cover;
+
+              }
+            }
+          }
+        }
+      }
+      /*----------- 革命地标 ---------*/
+      .faCard-landmark {
+        width: 436px;
+
+        .landmark-img {
+          margin-top: 16px;
+          flex: 0 0 20%;
+
+          li {
+            margin-bottom: 8px;
+            width: 213px;
+            height: 161px;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit:cover;
+            }
+          }
+        }
+      }
+      /*----------- 红色基因 ---------*/
+      .faCard-gene {
+        margin-right: 36px;
+        width: 651px;
+
+        .gene-center {
+          margin-top: 16px;
+
+          ol {
+            li:nth-child(1) {
+              margin-top: 0;
+            }
+
+            li {
+              text-align: left;
+              margin-top: 18px;
+              border-bottom: 1px dashed #f0efef;
+              padding-bottom: 17px;
+
+              h3 {
+                font-size: 18px;
+                color: #101010;
+                font-weight: 500;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+
+              p {
+                margin-top: 10px;
+                font-size: 16px;
+                color: #101010;
+                line-height: 30px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+              }
+            }
+          }
+        }
+      }
+      /*----------- 老兵之家 ---------*/
+      .faCard-home {
+        width: 436px;
+
+        .home-img {
+          margin-top: 16px;
+          flex: 0 0 20%;
+
+          li {
+            width: 213px;
+            height: 161px;
+            margin-bottom: 8px;
+            overflow: hidden;
+
+            img {
+            height: 100%;
+            width: 100%;
+            object-fit:cover;
+            }
+          }
+        }
+      }
+    }
+    /*----------- 法卡山部队老兵军网 ---------*/
+    .militaryNet {
+      margin-top: 41px;
+      padding-top: 16px;
+      border-top: 1px solid #a61f24;
+
+      .militaryNet-tetle {
+        .tetile-name {
+          color: #a61f24;
+          font-size: 26px;
+          margin-top: 15px;
+          text-align: left;
+          font-weight: 600;
+          margin-bottom: 21px;
+        }
+
+        .address {
+          font-size: 16px;
+          color: #101010;
+          text-align: left;
+        }
+
+        .list {
+          font-size: 16px;
+          color: #101010;
+          text-align: left;
+
+          .list-li:nth-child(1) {
+            margin-right: 36px;
+          }
+        }
+
+        .lists {
+          margin: 16px 0;
+        }
+      }
+
+      .militaryNet-img {
+        .img-qr:nth-child(1) {
+          margin-right: 36px;
+        }
+
+        .img-qr {
+          text-align: center;
+
+          img {
+            width: 160px;
+            height: 160px;
+            display: block;
+            margin-bottom: 8px;
+          }
+
+          p {
+            font-size: 14px;
+            color: #101010;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+//--------- 内容页 ---------、
+
+.content-index {
+  .w1120 {
+    background-color: #fff;
+    padding: 0 !important;
+
+    .nav {
+      background-color: #fff;
+      border-bottom: 1px solid #a61f24;
+      margin-top: 30px;
+
+      ul {
+        li {
+          padding: 0 12px;
+          height: 60px;
+          line-height: 60px;
+          font-size: 18px;
+          color: #202121;
+          text-align: center;
+          margin-right: 8px;
+          font-weight: 400;
+          cursor: pointer;
+        }
+
+        .active {
+          color: #a61f24;
+          border-bottom: 2px solid #a61f24;
+        }
+      }
+    }
+
+    .details-content {
+      padding-top: 25px;
+
+      .content-text {
+        font-size: 16px;
+        color: #101010;
+        line-height: 30px;
+        padding-bottom: 8px;
+
+        p {
+          text-indent: 20px;
+          text-align: justify;
+        }
+
+        .content-img {
+          max-width: 1120px;
+          height: auto;
+          margin: 25px auto;
+        }
+      }
+    }
+  }
+}
+//--------- 列表详情页 ---------
+
+.details-index {
+  .w1120 {
+    background: #fff;
+    padding: 0 !important;
+    //--------- 二级导航 ---------
+    .nav {
+      border-bottom: 1px solid #a61f24;
+      margin-top: 40px;
+
+      .nav-ol {
+        background-color: #fff !important;
+
+        li {
+          font-size: 18px;
+          color: #6B6B6B !important;
+          cursor: pointer;
+          a {
+            color: #a61f24;
+            font-weight: 400;
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+    //--------- 详情 ---------
+    .details-content {
+      padding-top: 25px;
+
+      .title {
+        font-size: 28px;
+        color: #101010;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 25px;
+      }
+
+      .time-item {
+        margin-bottom: 25px;
+        font-size: 16px;
+        color: #6B6B6B;
+
+        .source {
+          font:last-child {
+            margin-left: 40px;
+          }
+        }
+
+        .browse {
+          img {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      .content-text {
+        font-size: 16px;
+        color: #101010;
+        line-height: 30px;
+        padding-bottom: 8px;
+
+        p {
+          text-indent: 20px;
+          text-align: justify;
+        }
+
+        .content-img {
+          max-width: 1120px;
+          height: auto;
+          margin: 25px auto;
+        }
+      }
+    }
+  }
+}
+//--------- 列表---------
+
+.list-index {
+  .w1120 {
+    background-color: #fff;
+    padding: 0 !important;
+
+    .nav {
+      background-color: #fff;
+      border-bottom: 1px solid #a61f24;
+      margin-top: 30px;
+
+      ul {
+        li {
+          padding: 0 12px;
+          height: 60px;
+          line-height: 60px;
+          font-size: 18px;
+          color: #202121;
+          text-align: center;
+          margin-right: 8px;
+          font-weight: 400;
+          cursor: pointer;
+        }
+
+        .active {
+          color: #a61f24;
+          border-bottom: 2px solid #a61f24;
+        }
+      }
+    }
+
+    .list-content {
+      /*---------- 军民共建 --------*/
+      .jointly-lest {
+        ol {
+          flex-wrap: wrap;
+          flex-grow: wrap;
+          flex: 0 0 20%;
+
+          li {
+            border-bottom: 1px dashed #F0EFEF;
+            padding: 17px 0;
+
+            .img {
+              width: 220px;
+              height: 165px;
+              overflow: hidden;
+              margin-right: 12px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .written {
+              width: 310px;
+              height: 165px;
+              align-content: stretch;
+
+              h3 {
+                font-size: 18px;
+                text-align: left;
+                color: #101010;
+                margin-bottom: 14px;
+                line-height: 32px;
+                font-weight: 500;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+              }
+
+              p {
+                font-size: 16px;
+                color: #101010;
+                line-height: 30px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                text-align: justify;
+                word-wrap: break-word;
+              }
+
+              p:webkit-scrollbar {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      .page-item {
+        padding-top: 20px;
+        padding-bottom: 10px;
+
+        .page-link {
+          padding: 15px;
+          color: #101010 !important;
+        }
+
+        .page-item.active .page-link {
+          background-color: #fff !important;
+          border-color: #a61f24 !important;
+          color: #a61f24 !important;
+        }
+
+        .page-link:hover {
+          background: none !important;
+          border-color: #a61f24 !important;
+          color: #a61f24 !important;
+        }
+      }
+    }
+  }
+}
+//--------- 公共部分 ---------
+
+.common-logo {
+  height: 100px;
+
+  .w1120 {
+    line-height: 100px;
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .logo-text {
+      width: 26%;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 3% 0;
+    }
+
+    p {
+      margin-left: 15px;
+      font-size: 24px;
+      color: #a61f24;
+      font-family: "方正汉真" !important;
+      font-weight: 600;
+    }
+    // p {
+    //   margin-left: 8px;
+    //   color: #a61f24;
+    //   font-size: 26px;
+    //   font-weight: 600;
+    //   letter-spacing: 1px;
+    // }
+  }
+}
+
+.common-foot {
+  padding: 16px 0 70px;
+
+  .w1120 {
+    border-top: 1px solid #A61F24;
+    line-height: 70px;
+    font-size: 16px;
+    color: #101010;
+  }
+}
+/*----------------- 航行 ---------------*/
+.index-breadcrumb {
+  width: 100%!important;
+
+  .index-nav {
+    background-color: #a61f24;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 !important;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+
+    li:nth-child(1) {
+      margin-left: 0;
+    }
+
+    li {
+      font-size: 18px;
+      text-align: center;
+      font-family: "Roboto" !important;
+      margin-left: 52px;
+      color: rgba(255,255,255,0.82);
+      height: 60px;
+      margin-top: 0 !important;
+      line-height: 60px;
+
+      a {
+        color: rgba(255,255,255,0.82);
+        font-weight: 400;
+      }
+
+      .active {
+        color: rgba(255,255,255,1);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.emailRetrieve,
+.iphoneRetrieve {
+  -webkit-animation: bouncetop 0.5s 0.1s ease both;
+  -moz-animation: bouncetop 0.5s 0.1s ease both;
+}
+@-webkit-keyframes bouncetop {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes bouncetop {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+//媒体查询样式
+@media (min-width: 576px) {}
+// ........ 响应式 媒体查询样式 max-width: 1700px ........
+@media only screen and (max-width: 1700px) {}
+// ........ 响应式 媒体查询样式 max-width: 1600px ........
+@media only screen and (max-width: 1600px) {}
+// ........ 响应式 媒体查询样式 max-width: 1500px ........
+@media only screen and (max-width: 1500px) {}
+// ........ 响应式 媒体查询样式 max-width: 1400px ........
+@media only screen and (max-width: 1500px) {}

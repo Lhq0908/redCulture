@@ -1,0 +1,114 @@
+<view if="{{loading}}">
+  <view class="resource-index">
+    <!-- 搜索 -->
+    <view class="search">
+      <view class="search-item d-flex flex-nowrap align-items-center">
+        <!-- 切换城市功能未实现暂时隐藏 -->
+        <!-- <view class="city">南宁</view> -->
+        <view class="search-input d-flex flex-nowrap align-items-center">
+          <image src="../../../assets/search.png" />
+          <input placeholder="请输入关键词进行搜索" placeholder-class="placeholder" class="input" bindinput="bindKeyInput" bindconfirm='getSearch' value="{{keyword}}"></input>
+        </view>
+        <image src="../../../assets/search_close.png" class="close" wx:if="{{keyword !=''}}" bindtap='empty'></image>
+      </view>
+    </view>
+    <!-- 切换 -->
+    <view class="navbar-wrap">
+      <view class="tabs column {{isFixedTop?'fixed':''}}" id="navbar">
+        <text class="{{current==0 ? 'tabs-color' : ''}}" data-current="0" bindtap="clickTab">最新</text>
+        <text class="{{current==1 ? 'tabs-color' : ''}}" data-current="1" bindtap="clickTab">推荐</text>
+      </view>
+      <!-- 用于吸顶后 占位用的 -->
+      <view class="column" wx:if="{{isFixedTop}}"></view>
+    </view>
+    <view wx:if="{{inReachBottom}}" class="renew">
+      <text>为您更新了{{upDataLength}}条内容</text>
+    </view>
+    <!-- 切换内容 -->
+    <view class="swiper-wrapper" current="{{current}}" bindchange="swiperChange">
+      <!-- 最新 -->
+      <view class="show">
+        <!-- <view class="{{current == 0 ? 'show':'hidden'}}"> -->
+        <view class="content">
+          <view wx:if="{{!reLoadding}}" class="ul">
+            <view wx:for="{{dataList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{itemName.id}}" class="li">
+              <view class="li-top">
+                <navigator url="{{'../details/details?id='+itemName.id}}" hover-class="none">
+                  <view class="top-item d-flex flex-nowrap align-items-center justify-content-between">
+                    <!-- 头像 -->
+                    <image mode="aspectFill" src="../../../assets/default.png" wx:if="{{itemName.face == '' || itemName.face == null}}" />
+                    <image mode="aspectFill" src="{{itemName.face}}" wx:elif="{{itemName.face != '' || itemName.face != null}}" />
+
+                    <!-- 用户信息 -->
+                    <view class="top-item-right">
+                      <view class="name">{{itemName.name}}</view>
+                      <view class="type">
+                        {{itemName.clubName}}·{{itemName.industry}}
+                        <!-- <text>VIP</text> -->
+                      </view>
+                    </view>
+                  </view>
+                  <!-- 资源内容 -->
+                  <view class="text-item">
+                    <view class="text">{{itemName.content}}</view>
+                  </view>
+                </navigator>
+                <view class="text-item">
+                  <view wx:if="{{itemName.type==0}}" class="img-item d-flex flex-wrap align-items-center">
+                    <!-- 附件图片或视频 -->
+                    <view wx:for="{{itemName.resources}}" wx:key="{{index}}" wx:for-item="img">
+                      <image src="{{__HOST__ + img.url}}" class="img-one" mode="aspectFill" data-index="{{idx}}" data-src='{{imgItem.url}}' bindtap='previewImage' wx:if="{{itemName.resources.length ==1}}" />
+                    </view>
+                    <view class="img-list" wx:for="{{itemName.resources}}" wx:for-index="imgIndex" wx:for-item="imgItem" wx:key="{{imgItem.id}}" wx:if="{{itemName.resources.length >1}}">
+                      <image mode="aspectFill" bindtap='previewImage' src="{{__HOST__ + imgItem.url}}" class="img-one" data-index="{{idx}}" data-src='{{__HOST__ + imgItem.url}}' />
+                    </view>
+                  </view>
+                  <view wx:if="{{itemName.type==1}}" class="img-item d-flex flex-wrap align-items-center">
+                    <!-- 附件图片或视频 -->
+                    <view style="width:100%" wx:for="{{itemName.resources}}" wx:for-item="imgItem" wx:key="{{imgItem.id}}">
+                      <video style="width:100%" src="{{__HOST__ + imgItem.url}}" controls></video>
+                    </view>
+                  </view>
+                </view>
+                <!-- 其他信息 -->
+                <view class="time d-flex flex-nowrap align-items-center">
+                  <!-- 发布时间 -->
+                  <view class="time-item">{{itemName.createTime}}</view>
+                  <view class=" dianban d-flex flex-nowrap align-items-center justify-content-between">
+                    <!-- 评论数 -->
+                    <view class="d-flex flex-nowrap align-items-center justify-content-between">
+                      <image src="../../../assets/discuss.png" />
+                      <view>{{itemName.commentNums >0?itemName.commentNums :0}} </view>
+
+                    </view>
+                    <!-- 点赞数 -->
+                    <view class="d-flex flex-nowrap align-items-center justify-content-between" style="margin-left:20rpx;">
+                      <image src="../../../assets/index/dianban.png" />
+                      <view>{{itemName.likeNums>0?itemName.likeNums:0}}</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+        <view wx:if="{{over}}" class="more">没有更多内容啦~</view>
+      </view>
+
+    </view>
+    <!-- 发布按钮 -->
+    <view class="resource-btn">
+      <!-- <navigator url="/modules/resource/add/add?id=1184729925846650881" hover-class="none"> -->
+      <navigator url="/modules/resource/add/add" hover-class="none">
+        <image src="../../../assets/edit.png"></image>
+        <text>发布</text>
+      </navigator>
+    </view>
+    <image src='../../../assets/return_top.png' class="goTop" wx:if='{{floorstatus}}' bindtap="goTop"></image>
+  </view>
+</view>
+
+<!-- 加载中  -->
+<import src="../../../utils/loading/loading.wxml" />
+<template is="loading" data="{{item}}" />
